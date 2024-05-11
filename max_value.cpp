@@ -5,7 +5,7 @@
 using namespace std;
 
 double calculateMaxValue(double* nums, int n) {
-	vector<double> v;
+	vector<double> v(n);
 	for (int i = 0; i < n; i++)
 		v[i] = nums[i];
 	
