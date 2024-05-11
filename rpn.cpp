@@ -57,7 +57,8 @@ double calculateRPN(const std::string& expr) {
 		i++;
 
 
-		return st.top();
+		
 
 	}
+	return st.top();
 }
