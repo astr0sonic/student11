@@ -21,8 +21,7 @@ double myFunction(ifstream& f) {
 	double x;
 	for (int j = 0; !f.eof(); j++) {
 		f >> x;
-		if(x!=' ')
-			v[j]=x;
+		v[j]=x;
 	}
 	f.close();
 
@@ -31,7 +30,7 @@ double myFunction(ifstream& f) {
 
 
 	vector<double> rez;
-	for (int i = 1; i < v.size(); i++)
+	for (int i = 1; i < v.size()-2; i++)
 	{
 		if (v[i] != 0) {
 			rez = vector<double>{ mx - v[i],mx + v[i],mx * v[i],mx / v[i],mn - v[i],mn + v[i],mn * v[i],mn / v[i] };
