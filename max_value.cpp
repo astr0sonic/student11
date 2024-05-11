@@ -11,7 +11,7 @@ double calculateMaxValue(double* nums, int n) {
 		f << nums[i]<<endl;
 
 	ifstream f_1("output.txt");
-	double result = myFunction(f);
+	double result = myFunction(f_1);
 	return result;
 }
 
