@@ -18,8 +18,11 @@ double calculateMaxValue(double* nums, int n) {
 
 double myFunction(ifstream& f) {
 	vector<double> v;
-	for (int j = 0; !f.eof(); j++)
-		f >> v[j];
+	double x;
+	for (int j = 0; !f.eof(); j++) {
+		if(f>>x!=' ')
+			v[j]=x;
+	}
 	f.close();
 
 	double mx = v[0];
@@ -27,7 +30,7 @@ double myFunction(ifstream& f) {
 
 
 	vector<double> rez;
-	for (int i = 1; i < v.size()-1; i++)
+	for (int i = 1; i < v.size(); i++)
 	{
 		if (v[i] != 0) {
 			rez = vector<double>{ mx - v[i],mx + v[i],mx * v[i],mx / v[i],mn - v[i],mn + v[i],mn * v[i],mn / v[i] };
