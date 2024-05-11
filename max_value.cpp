@@ -20,7 +20,8 @@ double myFunction(ifstream& f) {
 	vector<double> v;
 	double x;
 	for (int j = 0; !f.eof(); j++) {
-		if(f>>x!=' ')
+		f >> x;
+		if(x!=' ')
 			v[j]=x;
 	}
 	f.close();
