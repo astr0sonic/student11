@@ -13,7 +13,9 @@ double calculateMaxValue(double* nums, int n) {
 
 	ifstream f_1("output.txt");
 	double result = myFunction(f_1);
+	f_1.close();
 	return result;
+	
 }
 
 double myFunction(ifstream& f) {
@@ -30,6 +32,7 @@ double myFunction(ifstream& f) {
 
 
 	vector<double> rez;
+
 	for (int i = 1; i < v.size()-2; i++)
 	{
 		if (v[i] != 0) {
