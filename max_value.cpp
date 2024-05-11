@@ -1,5 +1,7 @@
 #include "max_value.h"
 #include <fstream>
+#include<vector>
+using namespace std;
 
 double calculateMaxValue(double* nums, int n) {
 	
