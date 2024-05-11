@@ -4,7 +4,7 @@ using namespace std;
 
 std::vector<int> sieve(int n) {
 	vector<bool> primes(n, true);
-	vector<bool> prime;
+	vector<int> prime;
 	for (int i = 1; i < n; i++)
 	{
 		if (primes[i])
