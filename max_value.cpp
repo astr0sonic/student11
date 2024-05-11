@@ -7,8 +7,9 @@ double calculateMaxValue(double* nums, int n) {
 	
 	ifstream f("input.txt");
 	for (int i = 0; i < n; i++)
-		f << nums[i];
-	result = myFunction(f);
+		f << nums[i]<<endl;
+
+	double result = myFunction(f);
 	return result;
 }
 
