@@ -1,3 +1,3 @@
-#include <fstream>
+#include <vector>
 double calculateMaxValue(double* nums, int n);
-double myFunction(vector<double> v);
+double myFunction(std::vector<double> v);
