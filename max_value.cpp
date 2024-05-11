@@ -21,7 +21,7 @@ double calculateMaxValue(double* nums, int n) {
 double myFunction(ifstream& f) {
 	vector<double> v;
 	double x;
-	for (int j = 0; !f.eof(); j++) {
+	for (int j = 0; f.peek()!=EOF; j++) {
 		f >> x;
 		v[j]=x;
 	}
