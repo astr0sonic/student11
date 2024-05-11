@@ -1,4 +1,5 @@
 #include "bracket.h"
+#include <cstring>
 using namespace std;
 
 bool checkBrackets(const std::string& s) {
