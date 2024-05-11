@@ -1,5 +1,5 @@
 #include "max_value.h"
-
+#include <fstream>
 
 double calculateMaxValue(double* nums, int n) {
 	
