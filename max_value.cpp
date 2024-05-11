@@ -1,5 +1,5 @@
 #include "max_value.h"
-#include<vector>
+
 
 double calculateMaxValue(double* nums, int n) {
 	
