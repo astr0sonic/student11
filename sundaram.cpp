@@ -9,7 +9,7 @@ std::vector<int> sieve(int n) {
             p[i + j + 2 * i * j] = 1;
 
     for (int i = 1; i < n && (2 * i + 1) <= n; i++)
-        if (a[i] == 0)
+        if (p[i] == 0)
             primes.push_back(2 * i + 1);
     return primes;
 }
