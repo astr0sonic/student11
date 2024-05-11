@@ -1,14 +1,16 @@
 #include "max_value.h"
 #include <fstream>
 #include<vector>
+#include<algorithm>
 using namespace std;
 
 double calculateMaxValue(double* nums, int n) {
 	
-	ifstream f("input.txt");
+	ofstream f("output.txt");
 	for (int i = 0; i < n; i++)
 		f << nums[i]<<endl;
 
+	ifstream f_1("output.txt");
 	double result = myFunction(f);
 	return result;
 }
