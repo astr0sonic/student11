@@ -2,7 +2,7 @@
 #include <map>
 #include<queue>
 #include<vector>
-
+using namespace std;
 
 struct MinHeapNode {
     char data;
