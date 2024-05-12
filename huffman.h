@@ -1,5 +1,12 @@
 #include <string>
 #include <map>
+#include<queue>
+#include<vector>
+
+std:: map<char, std::string> codes(0, 0);
+std:: map<char, int> freq(0, 0);
+std::priority_queue<MinHeapNode*, std::vector<MinHeapNode*>, compare> minHeap(0, 0, 0);
+
 
 struct MinHeapNode {
     char data;

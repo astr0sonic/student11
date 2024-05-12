@@ -6,9 +6,6 @@
 #define MAX_TREE_HT 256
 using namespace std;
 
-map<char, string> codes(0,0);
-map<char, int> freq(0,0);
-priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap(0,0,0);
 
 
 
