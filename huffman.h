@@ -4,8 +4,7 @@
 #include<vector>
 using namespace std;
 
-struct MinHeapNode {};
-struct compare {};
+
 
 
 
