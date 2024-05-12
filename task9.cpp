@@ -41,7 +41,7 @@ string testEncode(const string& inputFileName, const string& outputFileName) {
 string testDecode(const string& inputFileName, const string& outputFileName) {
     ifstream in(inputFileName);
     string text = "";
-    map<char, string> codes={};
+    map<char, string> codes={ };
 
     getline(in, text);
 
