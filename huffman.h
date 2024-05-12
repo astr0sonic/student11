@@ -4,21 +4,8 @@
 #include<vector>
 using namespace std;
 
-struct MinHeapNode {
-    char data;
-    int freq;
-    MinHeapNode* left, * right;
-    MinHeapNode(char data, int freq);
-};
-
-struct compare {
-    bool operator()(MinHeapNode* l, MinHeapNode* r);
-};
-
-std:: map<char, std::string> codes;
-std:: map<char, int> freq;
-std::priority_queue<MinHeapNode*, std::vector<MinHeapNode*>, compare> minHeap;
-
+struct MinHeapNode {};
+struct compare {};
 
 
 
