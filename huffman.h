@@ -6,7 +6,7 @@ using namespace std;
 
 
 
-
+vector<int> getIndices(const string& my_template, const string& text);
 void storeCodes(struct MinHeapNode* root, std::string str);
 void HuffmanCodes(int size);
 void calcFreq(std::string str, int n);

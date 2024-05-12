@@ -69,21 +69,30 @@ void calcFreq(string str, int n)
 string decode_file(struct MinHeapNode* root, string s)
 {
     string ans = "";
-    struct MinHeapNode* curr = root;
-    for (int i = 0; i < s.size(); i++) {
-        if (s[i] == '0')
-            curr = curr->left;
-        else
-            curr = curr->right;
+    
+}
+
+vector<int> getIndices(const string& my_template, const string& text) {
 
 
-        if (curr->left == NULL && curr->right == NULL) {
-            ans += curr->data;
-            curr = root;
-        }
+
+    int pl = my_template.size();
+    int tl = text.size();
+    vector<int> answer(100);
+    vector<int> pr = prefixFunction(my_template + "#" + text);
+    int count = 0;
+    for (int i = 0; i < tl; i++) {
+        if (pr[pl + i + 1] == pl)
+            answer[count++] = i - pl + 1;
+    }
+    vector<int> result(0);
+    for (int i = 0; i < answer.size(); i++)
+    {
+        if (!(i > 0 && answer[i] == 0))
+            result.push_back(answer[i]);
     }
 
-    return ans + '\0';
+    return result;
 }
 
 string encode(const string& text) {
