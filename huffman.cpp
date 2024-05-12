@@ -10,15 +10,7 @@ map<char, string> codes;
 map<char, int> freq;
 priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap;
 
-void printCodes(struct MinHeapNode* root, string str)
-{
-    if (!root)
-        return;
-    if (root->data != '$')
-        cout << root->data << ": " << str << "\n";
-    printCodes(root->left, str + "0");
-    printCodes(root->right, str + "1");
-}
+
 
 void storeCodes(struct MinHeapNode* root, string str)
 {

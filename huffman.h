@@ -21,7 +21,7 @@ struct compare {
     }
 };
 
-void printCodes(struct MinHeapNode* root, std::string str);
+
 void storeCodes(struct MinHeapNode* root, std::string str);
 void HuffmanCodes(int size);
 void calcFreq(std::string str, int n);
