@@ -3,7 +3,6 @@
 #include<map>
 #include<string>
 #include<queue>
-#include<pair>
 #include<algorithm>
 
 using namespace std;
