@@ -16,8 +16,8 @@ void storeCodes(struct MinHeapNode* root, std::string str);
 void HuffmanCodes(int size);
 void calcFreq(std::string str, int n);
 
-string decodeHuffman(Node* root, string& encodedStr);
+string decodeHuffman(Node* , string& );
 Node* buildHuffmanTree(map<char, string>& codes);
 
-std::string encode(const std::string& text);
-std::string decode(const std::string& encoded, std::map<char, std::string>& codes_);
+string encode(const string& text);
+string decode(const string& encoded, map<char, string>& codes_);
