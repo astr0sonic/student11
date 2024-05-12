@@ -28,7 +28,7 @@ struct compare {
 
 map<char, string> codes={};
 map<char, int> freq={};
-priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap(0);
+priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap;
 
 
 void storeCodes(struct MinHeapNode* root, string str)
