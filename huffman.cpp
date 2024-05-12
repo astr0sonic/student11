@@ -3,6 +3,7 @@
 #include<map>
 #include<string>
 #include<queue>
+#include<pair>
 #include<algorithm>
 
 using namespace std;
@@ -66,34 +67,64 @@ void calcFreq(string str, int n)
         freq[str[i]]++;
 }
 
-string decode_file(struct MinHeapNode* root, string s)
-{
+struct Node {
+    char data;
+    Node* left;
+    Node* right;
+};
+
+Node* buildHuffmanTree(map<char, string>& codes) {
+    Node* root = new Node();
+    root->data = '-';
+    root->left = nullptr;
+    root->right = nullptr;
+
+    for (auto& pair : codes) {
+        Node* curr = root;
+        for (char& bit : pair.second) {
+            if (bit == '0') {
+                if (curr->left == nullptr) {
+                    curr->left = new Node();
+                    curr->left->data = '-';
+                    curr->left->left = nullptr;
+                    curr->left->right = nullptr;
+                }
+                curr = curr->left;
+            }
+            else {
+                if (curr->right == nullptr) {
+                    curr->right = new Node();
+                    curr->right->data = '-';
+                    curr->right->left = nullptr;
+                    curr->right->right = nullptr;
+                }
+                curr = curr->right;
+            }
+        }
+        curr->data = pair.first;
+    }
+
+    return root;
+}
+
+string decodeHuffman(Node* root, string& encodedStr) {
+    Node* curr = root;
     string ans = "";
-    
+    for (char& bit : encodedStr) {
+        if (bit == '0') {
+            curr = curr->left;
+        }
+        else {
+            curr = curr->right;
+        }
+        if (curr->left == nullptr && curr->right == nullptr) {
+            ans += curr->data;
+            curr = root;
+        }
+    }
+    return ans;
 }
 
-vector<int> getIndices(const string& my_template, const string& text) {
-
-
-
-    int pl = my_template.size();
-    int tl = text.size();
-    vector<int> answer(100);
-    vector<int> pr = prefixFunction(my_template + "#" + text);
-    int count = 0;
-    for (int i = 0; i < tl; i++) {
-        if (pr[pl + i + 1] == pl)
-            answer[count++] = i - pl + 1;
-    }
-    vector<int> result(0);
-    for (int i = 0; i < answer.size(); i++)
-    {
-        if (!(i > 0 && answer[i] == 0))
-            result.push_back(answer[i]);
-    }
-
-    return result;
-}
 
 string encode(const string& text) {
     calcFreq(text, text.size());
@@ -106,7 +137,7 @@ string encode(const string& text) {
 
 string decode(const string& encoded, map<char, string>& codes_) {
    
-    string decodedString=" ";
-    decodedString= decode_file(minHeap.top(), encoded);
+    Node* root = buildHuffmanTree(codes_);
+    string decodedString = decodeHuffman(root, encoded);
     return  decodedString;
 }
