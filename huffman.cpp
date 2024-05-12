@@ -6,7 +6,16 @@
 #define MAX_TREE_HT 256
 using namespace std;
 
-
+MinHeapNode::MinHeapNode(char data, int freq)
+{
+    left = right = NULL;
+    this->data = data;
+    this->freq = freq;
+}
+bool compare::operator()(MinHeapNode* l, MinHeapNode* r)
+{
+    return (l->freq > r->freq);
+}
 
 
 void storeCodes(struct MinHeapNode* root, string str)
