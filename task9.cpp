@@ -1,6 +1,5 @@
 #include <fstream>
 #include "huffman.h"
-
 using namespace std;
 
 string testEncode(const string& inputFileName, const string& outputFileName);

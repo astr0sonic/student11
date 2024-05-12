@@ -4,7 +4,7 @@
 #include<string>
 #include<queue>
 #include<algorithm>
-#define MAX_TREE_HT 256
+
 using namespace std;
 
 struct MinHeapNode {
