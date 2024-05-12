@@ -26,9 +26,9 @@ struct compare {
     }
 };
 
-std::map<char, std::string> codes;
-std::map<char, int> freq;
-std::priority_queue<MinHeapNode*, std::vector<MinHeapNode*>, compare> minHeap;
+map<char, std::string> codes;
+map<char, int> freq;
+priority_queue<MinHeapNode*, vector<MinHeapNode*>(0), compare> minHeap;
 
 
 void storeCodes(struct MinHeapNode* root, string str)
