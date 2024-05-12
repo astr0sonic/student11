@@ -16,7 +16,7 @@ vector<int> getIndices(const string& my_template, const string& text) {
         if (pr[pl + i + 1] == pl)
             answer[count++] = i - pl + 1;
     }
-    vector<int> result(2, 0);
+    vector<int> result(0);
     for (int i = 0; i < answer.size(); i++)
     {
         if (!(i > 0 && answer[i] == 0))
