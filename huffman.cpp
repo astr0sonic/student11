@@ -66,11 +66,7 @@ void calcFreq(string str, int n)
         freq[str[i]]++;
 }
 
-struct Node {
-    char data;
-    Node* left;
-    Node* right;
-};
+
 
 Node* buildHuffmanTree(map<char, string>& codes) {
     Node* root = new Node();
@@ -137,6 +133,7 @@ string encode(const string& text) {
 string decode(const string& encoded, map<char, string>& codes_) {
    
     Node* root = buildHuffmanTree(codes_);
-    string decodedString = decodeHuffman(root, encoded);
+    string decodedString="";
+    decodedString= decodeHuffman(root, encoded);
     return  decodedString;
 }
