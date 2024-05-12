@@ -72,7 +72,7 @@ string encode(const string& text) {
     calcFreq(text, text.size());
     string encodedString;
     HuffmanCodes(text.size());
-    for (int i=0;i< text.size(); i++)
+    for (auto i : text)
         encodedString += codes[i];
     return encodedString;
 }
