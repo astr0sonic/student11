@@ -3,6 +3,7 @@
 #include<map>
 #include<string>
 #include<queue>
+#include<algorithm>
 #define MAX_TREE_HT 256
 using namespace std;
 
@@ -28,7 +29,7 @@ struct compare {
 
 map<char, string> codes={};
 map<char, int> freq={};
-priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap(minHeap.begin(), minHeap.end());
+priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap={};
 
 
 void storeCodes(struct MinHeapNode* root, string str)
