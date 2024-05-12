@@ -95,7 +95,7 @@ string encode(const string& text) {
     return encodedString;
 }
 
-string decode(const string& encoded, map<char, string>& codes_>) {
+string decode(const string& encoded, map<char, string>& codes_) {
    
     string decodedString=" ";
     decodedString= decode_file(minHeap.top(), encoded);
