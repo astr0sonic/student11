@@ -74,12 +74,12 @@ string encode(const string& text) {
     HuffmanCodes(text.size());
     for (int i=0;i< text.size(); i++)
         encodedString += codes[i];
-    return encodedString
+    return encodedString;
 }
 
 string decode(const string& encoded, map<char, string>& codes) {
    
     string decodedString;
     decodedString= decode_file(minHeap.top(), encoded);
-    return  decodedString
+    return  decodedString;
 }
