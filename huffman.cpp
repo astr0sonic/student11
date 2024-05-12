@@ -26,8 +26,8 @@ struct compare {
     }
 };
 
-map<char, string> codes(0);
-map<char, int> freq(0);
+map<char, string> codes={};
+map<char, int> freq={};
 priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap(0);
 
 
