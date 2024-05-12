@@ -32,7 +32,7 @@ map<char, int> freq={};
 priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap={};
 
 
-void storeCodes(struct MinHeapNode* root, string str)
+void storeCodes(struct MinHeapNode* root, const string str)
 {
     if (root == NULL)
         return;
@@ -60,7 +60,7 @@ void HuffmanCodes(int size)
     storeCodes(minHeap.top(), "");
 }
 
-void calcFreq(string str, int n)
+void calcFreq(const string str, int n)
 {
     for (int i = 0; i < str.size(); i++)
         freq[str[i]]++;
@@ -102,7 +102,7 @@ Node* buildHuffmanTree(map<char, string>& codes) {
     return root;
 }
 
-string decodeHuffman(Node* root, string& encodedStr) {
+string decodeHuffman(Node* root, const string& encodedStr) {
     Node* curr = root;
     string ans = "";
     for (char& bit : encodedStr) {

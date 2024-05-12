@@ -10,13 +10,11 @@ struct Node {
     Node* right;
 };
 
-vector<int> prefixFunction(string s);
-vector<int> getIndices(const string& my_template, const string& text);
-void storeCodes(struct MinHeapNode* root, std::string str);
+void storeCodes(struct MinHeapNode* root, const string str);
 void HuffmanCodes(int size);
-void calcFreq(std::string str, int n);
+void calcFreq(const string str, int n);
 
-string decodeHuffman(Node* , string& );
+string decodeHuffman(Node* , const string& );
 Node* buildHuffmanTree(map<char, string>& codes);
 
 string encode(const string& text);
