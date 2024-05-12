@@ -45,16 +45,14 @@ void storeCodes(struct MinHeapNode* root, string str)
 void HuffmanCodes(int size)
 {
     struct MinHeapNode* left, * right, * top;
-    for (map<char, int>::iterator v = freq.begin();
-        v != freq.end(); v++)
+    for (map<char, int>::iterator v = freq.begin();v != freq.end(); v++)
         minHeap.push(new MinHeapNode(v->first, v->second));
     while (minHeap.size() != 1) {
         left = minHeap.top();
         minHeap.pop();
         right = minHeap.top();
         minHeap.pop();
-        top = new MinHeapNode('$',
-            left->freq + right->freq);
+        top = new MinHeapNode('$',left->freq + right->freq);
         top->left = left;
         top->right = right;
         minHeap.push(top);

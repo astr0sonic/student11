@@ -5,18 +5,7 @@
 using namespace std;
 
 
-struct MinHeapNode {
-    char data;
-    int freq;
-    MinHeapNode* left, * right;
 
-    MinHeapNode(char data, int freq)
-    {
-        left = right = NULL;
-        this->data = data;
-        this->freq = freq;
-    }
-};
 
 void storeCodes(struct MinHeapNode* root, std::string str);
 void HuffmanCodes(int size);
