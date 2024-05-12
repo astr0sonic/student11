@@ -6,9 +6,9 @@
 #define MAX_TREE_HT 256
 using namespace std;
 
-map<char, string> codes;
-map<char, int> freq;
-priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap;
+map<char, string> codes(0);
+map<char, int> freq(0);
+priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap(0);
 
 
 
@@ -70,7 +70,7 @@ string decode_file(struct MinHeapNode* root, string s)
 
 string encode(const string& text) {
     calcFreq(text, text.size());
-    string encodedString;
+    string encodedString="";
     HuffmanCodes(text.size());
     for (auto i : text)
         encodedString += codes[i];
@@ -79,7 +79,7 @@ string encode(const string& text) {
 
 string decode(const string& encoded, map<char, string>& codes) {
    
-    string decodedString;
+    string decodedString="";
     decodedString= decode_file(minHeap.top(), encoded);
     return  decodedString;
 }
