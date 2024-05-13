@@ -102,7 +102,7 @@ Node* buildHuffmanTree(map<char, string>& codes) {
     return root;
 }
 
-string decodeHuffman(Node* root, const string& encodedStr) {
+string decodeHuffman(Node* root, const string encodedStr) {
     Node* curr = root;
     string ans = "";
     for (char& bit : encodedStr) {

@@ -14,7 +14,7 @@ void storeCodes(struct MinHeapNode* root, const string str);
 void HuffmanCodes(int size);
 void calcFreq(const string str, int n);
 
-string decodeHuffman(Node* , const string& );
+string decodeHuffman(Node* , const string );
 Node* buildHuffmanTree(map<char, string>& codes);
 
 string encode(const string& text);
