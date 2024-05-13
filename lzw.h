@@ -1,8 +1,8 @@
 #include <string>
 #include <vector>
+using namespace std;
 
-
-std::vector<int> compress(const std::string& text);
-std::string decompress(const std::vector<int>& compressed);
-std::vector<int> compress_(const std::string& input);
-std::string decompress_(const std::vector<int>& compressed)
+vector<int> compress(const string& text);
+string decompress(const vector<int>& compressed);
+vector<int> compress_(const string& input);
+string decompress_(const vector<int>& compressed)

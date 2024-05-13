@@ -1,7 +1,7 @@
+#include "lzw.h"
 #include <fstream>
 #include <string>
 #include <vector>
-#include "lzw.h"
 using namespace std;
 
 void testCompress(const string& , const string& );
@@ -31,12 +31,12 @@ void testCompress(const string& inputFileName, const string& outputFileName) {
     getline(in, text);
     in.close();
 
-    vector<int> compressed = compress(text); 
+    vector<int> compressed_ = compress(text); 
 
     ofstream out(outputFileName);
-    out << compressed[0];
-    for (int i = 1; i < compressed.size(); i++) {
-        out << " " << compressed[i];
+    out << compressed_[0];
+    for (int i = 1; i < compressed_.size(); i++) {
+        out << " " << compressed_[i];
     }
     out << endl;
     out.close();
@@ -45,16 +45,16 @@ void testCompress(const string& inputFileName, const string& outputFileName) {
 
 void testDecompress(const string& inputFileName, const string& outputFileName) {
     ifstream in(inputFileName);
-    vector<int> compressed(0);
+    vector<int> compressed_(0);
     int code = -1;
     while (in >> code) {
-        compressed.push_back(code);
+        compressed_.push_back(code);
     }
     in.close();
 
-    string decompressed = decompress(compressed); 
+    string decompressed_ = decompress(compressed_); 
 
     ofstream out(outputFileName);
-    out << decompressed << endl;
+    out << decompressed_ << endl;
     out.close();
 }
