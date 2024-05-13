@@ -44,7 +44,7 @@ string decompress_(const vector<int>& compressed_) {
     }
 
     string result="";
-    string previous(0);
+    string previous;
     for (int code : compressed_) {
         std::string current;
         if (dictionary.find(code) != dictionary.end()) {
