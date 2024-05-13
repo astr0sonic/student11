@@ -5,7 +5,6 @@
 #include <vector>
 #include<algorithm>
 #include "lzw.h"
-
 using namespace std;
 
 vector<int> compress_(const string& input) {
