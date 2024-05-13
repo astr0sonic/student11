@@ -15,12 +15,13 @@ int main(int argc, char** argv) {
     bool isDecompress = static_cast<int>(inputFileName[len - 5]) - static_cast<int>('0') >= 4;
     if (isDecompress) {
         testDecompress(inputFileName, outputFileName);
-    } else {
+    }
+    else {
         testCompress(inputFileName, outputFileName);
     }
 
     return 0;
-}
+};
 
 
 void testCompress(const string& inputFileName, const string& outputFileName) {
@@ -43,7 +44,7 @@ void testCompress(const string& inputFileName, const string& outputFileName) {
 
 void testDecompress(const string& inputFileName, const string& outputFileName) {
     ifstream in(inputFileName);
-    vector<int> compressed;
+    vector<int> compressed(0);
     int code = -1;
     while (in >> code) {
         compressed.push_back(code);
