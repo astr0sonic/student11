@@ -3,15 +3,16 @@
 #include <string>
 #include <map>
 #include <vector>
+using namespace std;
 
 std::vector<int> compress(const std::string& input) {
-    std::map<std::string, int> dictionary;
+    std::map<std::string, int> dictionary={};
     for (int i = 0; i < 256; ++i) {
         dictionary[std::string(1, i)] = i;
     }
 
-    std::string current;
-    std::vector<int> result;
+    std::string current="";
+    std::vector<int> result(0);
     for (char c : input) {
         std::string next = current + c;
         if (dictionary.find(next) != dictionary.end()) {
@@ -32,13 +33,13 @@ std::vector<int> compress(const std::string& input) {
 }
 
 std::string decompress(const std::vector<int>& compressed) {
-    std::map<int, std::string> dictionary;
+    std::map<int, std::string> dictionary={};
     for (int i = 0; i < 256; ++i) {
         dictionary[i] = std::string(1, i);
     }
 
-    std::string result;
-    std::string previous;
+    std::string result="";
+    std::string previous(0);
     for (int code : compressed) {
         std::string current;
         if (dictionary.find(code) != dictionary.end()) {
@@ -63,7 +64,7 @@ std::string decompress(const std::vector<int>& compressed) {
 
 
 std::vector<int> compress(const std::string& text) {
-    std::vector<int> compressed;
+    std::vector<int> compressed(0);
     compressed = compress(text);
     return compressed;
 }
