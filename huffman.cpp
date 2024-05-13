@@ -123,7 +123,7 @@ string decodeHuffman(Node* root, const string encodedStr) {
 
 string encode(const string& text) {
     calcFreq(text, text.size());
-    string encodedString=" ";
+    string encodedString="";
     HuffmanCodes(text.size());
     for (auto i : text)
         encodedString += codes[i];
