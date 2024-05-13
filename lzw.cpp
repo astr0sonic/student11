@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-std::vector<int> compress(const std::string& input) {
+std::vector<int> compress_(const std::string& input) {
     std::map<std::string, int> dictionary={};
     for (int i = 0; i < 256; ++i) {
         dictionary[std::string(1, i)] = i;
@@ -32,7 +32,7 @@ std::vector<int> compress(const std::string& input) {
     return result;
 }
 
-std::string decompress(const std::vector<int>& compressed) {
+std::string decompress_(const std::vector<int>& compressed) {
     std::map<int, std::string> dictionary={};
     for (int i = 0; i < 256; ++i) {
         dictionary[i] = std::string(1, i);
@@ -65,12 +65,12 @@ std::string decompress(const std::vector<int>& compressed) {
 
 std::vector<int> compress(const std::string& text) {
     std::vector<int> compressed(0);
-    compressed = compress(text);
+    compressed = compress_(text);
     return compressed;
 }
 
 std::string decompress(const std::vector<int>& compressed) {
     std::string decompressed = "";
-    decompressed = decompress(compressed);
+    decompressed = decompress_(compressed);
     return decompressed;
 }
