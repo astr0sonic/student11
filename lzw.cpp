@@ -5,23 +5,23 @@
 #include <vector>
 using namespace std;
 
-std::vector<int> compress_(const std::string& input) {
-    std::map<std::string, int> dictionary={};
+vector<int> compress_(const string& input) {
+    map<std::string, int> dictionary={};
     for (int i = 0; i < 256; ++i) {
-        dictionary[std::string(1, i)] = i;
+        dictionary[string(1, i)] = i;
     }
 
-    std::string current="";
-    std::vector<int> result(0);
+    string current="";
+    vector<int> result(0);
     for (char c : input) {
-        std::string next = current + c;
+        string next = current + c;
         if (dictionary.find(next) != dictionary.end()) {
             current = next;
         }
         else {
             result.push_back(dictionary[current]);
             dictionary[next] = dictionary.size();
-            current = std::string(1, c);
+            current = string(1, c);
         }
     }
 
@@ -32,14 +32,14 @@ std::vector<int> compress_(const std::string& input) {
     return result;
 }
 
-std::string decompress_(const std::vector<int>& compressed) {
-    std::map<int, std::string> dictionary={};
+string decompress_(const vector<int>& compressed) {
+    map<int, string> dictionary = {};
     for (int i = 0; i < 256; ++i) {
-        dictionary[i] = std::string(1, i);
+        dictionary[i] = string(1, i);
     }
 
-    std::string result="";
-    std::string previous(0);
+    string result="";
+    string previous(0);
     for (int code : compressed) {
         std::string current;
         if (dictionary.find(code) != dictionary.end()) {
@@ -63,14 +63,13 @@ std::string decompress_(const std::vector<int>& compressed) {
 
 
 
-std::vector<int> compress(const std::string& text) {
-    std::vector<int> compressed(0);
+vector<int> compress(const string& text) {
+    vector<int> compressed(0);
     compressed = compress_(text);
     return compressed;
 }
-
-std::string decompress(const std::vector<int>& compressed) {
-    std::string decompressed = "";
+string decompress(const vector<int>& compressed) {
+    string decompressed = "";
     decompressed = decompress_(compressed);
     return decompressed;
 }

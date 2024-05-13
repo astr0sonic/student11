@@ -1,6 +1,5 @@
 #include <fstream>
 #include "lzw.h"
-
 using namespace std;
 
 void testCompress(const string& inputFileName, const string& outputFileName);
