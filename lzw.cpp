@@ -4,6 +4,7 @@
 #include <map>
 #include<string>
 #include <vector>
+#include<algorithm>
 using namespace std;
 
 vector<int> compress_(const string& input) {
