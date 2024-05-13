@@ -1,16 +1,17 @@
+#include<iostream>
 #include <fstream>
 #include <string>
 #include <vector>
-#include<iostream>
-#include "lzw.h"
+#include"lzw.h"
 
-using namespace std;
+
 
 void testCompress(const string& , const string& );
 void testDecompress(const string& , const string& );
 
 
 int main(int argc, char** argv) {
+    using namespace std;
     string inputFileName = argv[1];
     string outputFileName = argv[2];
 
