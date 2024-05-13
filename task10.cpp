@@ -7,6 +7,30 @@ using namespace std;
 
 
 
+
+void testCompress(const string& inputFileName, const string& outputFileName);
+void testDecompress(const string& inputFileName, const string& outputFileName);
+
+
+int main(int argc, char** argv) {
+    using namespace std;
+    string inputFileName = argv[1];
+    string outputFileName = argv[2];
+
+    int len = inputFileName.length();
+    bool isDecompress = static_cast<int>(inputFileName[len - 5]) - static_cast<int>('0') >= 4;
+    if (isDecompress) {
+        testDecompress(inputFileName, outputFileName);
+    }
+    else {
+        testCompress(inputFileName, outputFileName);
+    }
+
+    return 0;
+};
+
+
+
 void testCompress(const string& inputFileName, const string& outputFileName) {
     using namespace std;
     ifstream in(inputFileName);
@@ -42,24 +66,3 @@ void testDecompress(const string& inputFileName, const string& outputFileName) {
     out << decompressed_ << endl;
     out.close();
 }
-
-
-int main(int argc, char** argv) {
-    using namespace std;
-    string inputFileName = argv[1];
-    string outputFileName = argv[2];
-
-    int len = inputFileName.length();
-    bool isDecompress = static_cast<int>(inputFileName[len - 5]) - static_cast<int>('0') >= 4;
-    if (isDecompress) {
-        testDecompress(inputFileName, outputFileName);
-    }
-    else {
-        testCompress(inputFileName, outputFileName);
-    }
-
-    return 0;
-};
-
-
-
