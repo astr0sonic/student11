@@ -8,8 +8,8 @@ using namespace std;
 
 
 
-void testCompress(const string& inputFileName, const string& outputFileName);
 void testDecompress(const string& inputFileName, const string& outputFileName);
+void testCompress(const string& inputFileName, const string& outputFileName);
 
 
 int main(int argc, char** argv) {
