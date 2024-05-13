@@ -2,8 +2,8 @@
 #include "lzw.h"
 using namespace std;
 
-void testCompress(const string& inputFileName, const string& outputFileName);
-void testDecompress(const string& inputFileName, const string& outputFileName);
+void testCompress(const string& , const string& );
+void testDecompress(const string& , const string& );
 
 
 int main(int argc, char** argv) {
@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
     }
 
     return 0;
-};
+}
 
 
 void testCompress(const string& inputFileName, const string& outputFileName) {
