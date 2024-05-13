@@ -5,9 +5,10 @@
 #include <vector>
 #include<algorithm>
 #include "lzw.h"
-using namespace std;
+
 
 vector<int> compress_(const string& input) {
+    using namespace std;
     map<string, int> dictionary={};
     for (int i = 0; i < 256; ++i) {
         dictionary[string(1, i)] = i;
@@ -35,6 +36,7 @@ vector<int> compress_(const string& input) {
 }
 
 string decompress_(const vector<int>& compressed_) {
+    using namespace std;
     map<int, string> dictionary = {};
     for (int i = 0; i < 256; ++i) {
         dictionary[i] = string(1, i);
@@ -66,11 +68,13 @@ string decompress_(const vector<int>& compressed_) {
 
 
 vector<int> compress(const string& text) {
+    using namespace std;
     vector<int> compressed;
     compressed = compress_(text);
     return compressed;
 }
 string decompress(const vector<int>& compressed) {
+    using namespace std;
     string decompressed = "";
     decompressed = decompress_(compressed);
     return decompressed;
