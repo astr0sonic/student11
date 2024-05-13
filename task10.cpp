@@ -1,9 +1,10 @@
+using namespace std;
 #include<iostream>
 #include <fstream>
 #include <string>
 #include <vector>
 #include"lzw.h"
-using namespace std;
+
 
 
 void testCompress(const string& inputFileName, const string& outputFileName) {

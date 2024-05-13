@@ -1,11 +1,12 @@
 #include <iostream>
 #include <string>
 #include <map>
+using namespace std;
 #include<string>
 #include <vector>
 #include<algorithm>
 #include "lzw.h"
-using namespace std;
+
 
 vector<int> compress_(const string& input) {
     using namespace std;
