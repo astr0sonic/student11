@@ -7,7 +7,7 @@
 using namespace std;
 
 vector<int> compress_(const string& input) {
-    map<std::string, int> dictionary={};
+    map<string, int> dictionary={};
     for (int i = 0; i < 256; ++i) {
         dictionary[string(1, i)] = i;
     }
@@ -33,7 +33,7 @@ vector<int> compress_(const string& input) {
     return result;
 }
 
-string decompress_(const vector<int>& compressed) {
+string decompress_(const vector<int>& compressed_) {
     map<int, string> dictionary = {};
     for (int i = 0; i < 256; ++i) {
         dictionary[i] = string(1, i);
