@@ -1,7 +1,9 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include<iostream>
 #include "lzw.h"
+
 using namespace std;
 
 void testCompress(const string& , const string& );
