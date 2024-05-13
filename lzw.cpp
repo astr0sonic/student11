@@ -14,7 +14,7 @@ vector<int> compress_(const string& input) {
     }
 
     string current="";
-    vector<int> result(0);
+    vector<int> result;
     for (char c : input) {
         string next = current + c;
         if (dictionary.find(next) != dictionary.end()) {
@@ -66,7 +66,7 @@ string decompress_(const vector<int>& compressed_) {
 
 
 vector<int> compress(const string& text) {
-    vector<int> compressed(0);
+    vector<int> compressed;
     compressed = compress_(text);
     return compressed;
 }
